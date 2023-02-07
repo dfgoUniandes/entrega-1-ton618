@@ -1,0 +1,121 @@
+Domain GestionEnvios {
+    domainVisionStatement = ""
+
+  Subdomain GestionEntregas supports GestionarEntregasRestaurantes, GestionarEntregasMercado, GestionarEntregasPickupPoint, GestionarEntregasDireccion {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Realizar las entregas dentro de los tiempos establecidos y competitivos."
+    }
+
+    Subdomain GestionFlotasPropias supports CoordinarFlotaPropia {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Optimizar la utilizacion de recursos propios. Aprovechando al maximo cada viaje realizado"
+    }
+
+    Subdomain IntegracionFlotasTerceros supports CoordinarFlotaTerceros {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Permitir la integración con sistemas de transporte externos de forma agil"
+    }
+
+    Subdomain GestionRutas supports CoordinarRuta, CrearHojaRuta {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Creación y modificación de las rutas de forma efectiva."
+    }
+
+    Subdomain GestionInventario supports RecibirOrden, ValidarOrden, MarcarPedido, EmpaquetarProducto {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Revision de disponibilidad de los productos"
+    }
+
+    Subdomain GestionOrdenes supports CrearOrden, PagarOrden {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Administrar la creación de ordenes"
+    }
+
+}
+
+UserStory CrearOrden {
+    As an "Sistema de ordenes"
+    I want to "crear" an "Orden" for a "Ususario"
+  so that "el Usuario podra pagar la Orden"
+}
+
+UserStory PagarOrden {
+    As an "Usuario"
+    I want to "pagar" an "Orden"
+  so that "que la orden sea recibida"
+}
+
+UserStory RecibirOrden {
+    As an "Sistema de cadena de suministro"
+    I want to "recibir" an "Orden"
+  so that "comprobar la disponibilidad en centros de distribucion"
+}
+
+UserStory ValidarOrden {
+    As an "Sistema de cadena de suministro"
+    I want to "validar" an "Orden"
+  so that "Solicitar la distribucion a proveedores o solicitar el translado a la bodega"
+}
+
+UserStory MarcarPedido {
+    As an "Sistema de cadena de suministro"
+    I want to "marcar" a "Pedido"
+  so that "mostrar al Usuario si se presentara un retraso"
+}
+
+UserStory EmpaquetarProducto {
+    As an "Sistema de cadena de suministro"
+    I want to "empaquetar" a "Producto"
+  so that "iniciar con la coordinacion de rutas"
+}
+
+UserStory CoordinarRuta {
+    As an "Servicio de facilitacion"
+    I want to "coordinar" a "Ruta"
+  so that "saber si se usa flota propia o de terceros"
+}
+
+UserStory CrearHojaRuta {
+    As an "Servicio de facilitacion"
+    I want to "coordinar" a "Rutas" with its "inicio", "fin"
+  so that "iniciar con la entrega de los productos"
+}
+
+UserStory CoordinarFlotaPropia {
+    As an "Flota de domiciliarios"
+    I want to "entregar" a "HojaRuta"
+  so that "iniciar con la entrega"
+}
+
+UserStory CoordinarFlotaTerceros {
+    As an "Flota de terceros"
+    I want to "entregar" a "HojaRuta"
+  so that "iniciar con la entrega"
+}
+
+UserStory GestionarEntregasRestaurantes {
+    As an "Flota de domiciliario"
+    I want to "entregar" a "Pedido"
+  so that "entregar en menos de 45 minutos"
+}
+
+UserStory GestionarEntregasMercado {
+    As an "Flota de domiciliario"
+    I want to "entregar" a "Pedido"
+  so that "entregar en menos de 60 minutos"
+}
+
+UserStory GestionarEntregasPickupPoint {
+    As an "Flota de domiciliario"
+    I want to "entregar" a "Pedido"
+  so that "entregar en los pickup point"
+}
+
+UserStory GestionarEntregasDireccion {
+    As an "Flota de domiciliario"
+    I want to "entregar" a "Pedido"
+  so that "entregar en la direccion del Usuario"
+}
+
+
+
