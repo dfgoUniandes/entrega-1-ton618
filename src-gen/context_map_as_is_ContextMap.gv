@@ -1,0 +1,52 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/tmp/GraphvizJava"]
+"EmpaquetadoContext" ["margin"="0.3","orientation"="183","shape"="egg","fontsize"="16","style"="bold","label"="EmpaquetadoContext\n","fontname"="sans-serif"]
+"RutasContext" ["margin"="0.3","orientation"="332","shape"="egg","fontsize"="16","style"="bold","label"="RutasContext\n","fontname"="sans-serif"]
+"FlotaPropiaContext" ["margin"="0.3","orientation"="347","shape"="egg","fontsize"="16","style"="bold","label"="FlotaPropiaContext\n","fontname"="sans-serif"]
+"FlotaTercerosContext" ["margin"="0.3","orientation"="327","shape"="egg","fontsize"="16","style"="bold","label"="FlotaTercerosContext\n","fontname"="sans-serif"]
+"EntregasContext" ["margin"="0.3","orientation"="223","shape"="egg","fontsize"="16","style"="bold","label"="EntregasContext\n","fontname"="sans-serif"]
+"InventarioBodegasContext" ["margin"="0.3","orientation"="257","shape"="egg","fontsize"="16","style"="bold","label"="InventarioBodegasContext\n","fontname"="sans-serif"]
+"InventarioCentrosDistribucionContext" ["margin"="0.3","orientation"="110","shape"="egg","fontsize"="16","style"="bold","label"="InventarioCentrosDistribucionContext\n","fontname"="sans-serif"]
+"OrdenesContext" ["margin"="0.3","orientation"="28","shape"="egg","fontsize"="16","style"="bold","label"="OrdenesContext\n","fontname"="sans-serif"]
+"EmpaquetadoContext" -> "RutasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"EmpaquetadoContext" -> "EntregasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"RutasContext" -> "FlotaPropiaContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"RutasContext" -> "FlotaTercerosContext" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"FlotaPropiaContext" -> "FlotaTercerosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"InventarioBodegasContext" -> "InventarioCentrosDistribucionContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"InventarioBodegasContext" -> "EmpaquetadoContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"InventarioCentrosDistribucionContext" -> "EmpaquetadoContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"OrdenesContext" -> "InventarioBodegasContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+}
