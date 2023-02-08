@@ -1,28 +1,55 @@
-![Context Mapper](https://raw.githubusercontent.com/wiki/ContextMapper/context-mapper-dsl/logo/cm-logo-github-small.png)
-# Context Mapper Demo for Online IDE 
-[![Build](https://github.com/ContextMapper/web-ide-demo/actions/workflows/build.yml/badge.svg)](https://github.com/ContextMapper/web-ide-demo/actions) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ContextMapper/web-ide-demo) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Presentación Entrega 1 - Proyecto Diseño y construcción de soluciones no monolíticas
 
-Welcome to Context Mapper's demo repository. It illustrates how you can configure your own repository for the usage of Context Mapper in the online IDE [Gitpod](https://www.gitpod.io/).
+## Grupo TON618
 
-## Start Using Context Mapper Now
-Start the online IDE and use Context Mapper right now:
+## Integrantes
 
-<a href="https://gitpod.io/#https://github.com/ContextMapper/web-ide-demo" style="padding: 10px;">
-    <img src="https://gitpod.io/button/open-in-gitpod.svg" width="150" alt="Push" align="center">
-</a>
-<br/><br/>
+* Elkin Rativa Ruiz
+* Jorge Pacheco Rodríguez
+* Oscar Cortes Medina
+* Diego Garcia Ortega
 
-## Open the Demo File
-In the folder `src/main/cml` you find a small **[CML demo](./src/main/cml/demo.cml)** (DDD sample application) where you can start to familiarize yourself with our DSL and our tools.
-You can find more info's about the tool and a complete documentation on our website [https://contextmapper.org/](https://contextmapper.org/).
+### Documentación de dominios y sub-dominios
 
-## Create Your Own Context Mapping Repository
-You can simply fork this repository and click the button above to start the online IDE for your repo.
+1. La ruta dentro del proyecto es <b>src/main/cml/domain_subdomain_as_is.cml</b> correspondiente al entregable de los siguientes criterios:
+> * Identificar y documentar los Dominios y sub-dominios usando el DSL de ContextMapper para el AS-IS 
+> * Plasmar el vision statement para todos los dominios usando el DSL de ContextMapper para el AS-IS
 
-## Useful Links
- 
- * [More example models](https://github.com/ContextMapper/context-mapper-examples)
- * [CML language reference](https://contextmapper.org/docs/language-reference/)
- * [Rapid prototyping tutorial](https://contextmapper.org/docs/rapid-ooad/)
- * [Architectural Refactorings](https://contextmapper.org/docs/architectural-refactorings/)
- * [Generators](https://contextmapper.org/docs/generators/)
+2. La ruta dentro del proyecto es <b>src/main/cml/domain_subdomain_to_be.cml</b> correspondiente al entregable de los siguientes criterios:
+> * Identificar y documentar los Dominios y sub-dominios usando el DSL de ContextMapper para el TO-BE 
+> * Plasmar el vision statement para todos los dominios usando el DSL de ContextMapper para el TO-BE
+
+### Documentación del lenguaje ubicuo
+
+1. La ruta dentro del proyecto es <b>src/lenguajeUbico/Modelo AS IS.jpg</b> correspondiente al entregable de los siguientes criterios:
+>> También es posible observar la imagen Modelo AS IS aquí en esta descripción.
+> * Identificó y documentó correctamente todos los actores, eventos, comandos, modelo de lectura, sistemas externos y definiciones relevantes para el flujo de “Envío de pedidos” ASIS usando el método EventStorming.
+![Modelo AS IS](https://user-images.githubusercontent.com/78925077/217417892-a29f4feb-c930-4734-b959-618f2228c493.jpg)
+
+2. La ruta dentro del proyecto es <b>src/lenguajeUbico/Modelo TO BE.jpg</b> correspondiente al entregable de los siguientes criterios:
+>> También es posible observar la imagen Modelo TO BE aquí en esta descripción.
+> * Identificó y documentó correctamente todos los actores, eventos, comandos, modelo de lectura, sistemas externos y definiciones relevantes para el flujo de “Envío de pedidos” ASIS usando el método EventStorming
+![Modelo TO BE](https://user-images.githubusercontent.com/78925077/217417993-989ef22e-02af-4adf-acb2-e178673b0d08.jpg)
+
+>>> Para observar el proceso de construcción de EventStorming puede dirigirse a este enlace: https://miro.com/app/board/uXjVPqWuOqY=/
+
+### Documentación de contextos acotados
+
+1. La ruta dentro del proyecto es <b>src/main/cml/context_map_as_is.cml</b> correspondiente al entregable de los siguientes criterios:
+> * Contextos usando el DSL del ContextMapper para el AS-IS 
+> * Relaciones y tipos de integración entre contextos usando el DSL del ContextMapper para el AS-IS
+
+Para la generacion de las iamgenes en formato png, gv y svg debe abrir el archivo context_map_as_is.cml y dar clic derecho sobre el mismo y seleccionar la opcion Generate Graphical Context Map como se observa en la figura. 
+>> De igual forma las imágenes generadas del código se encuentran en la siguiente ruta dentro del proyecto: src-gen/context_map_as_is_ContextMap.png
+
+![image](https://user-images.githubusercontent.com/78925077/217416596-b13f8fbf-0b5b-4458-9517-9585c12de598.png)
+
+2. La ruta dentro del proyecto es <b>src/main/cml/context_map_to_be.cml</b> correspondiente al entregable de los siguientes criterios:
+> * Contextos usando el DSL del ContextMapper para el TO-BE
+> * Relaciones y tipos de integración entre contextos usando el DSL del ContextMapper para el TO-BE
+
+Para la generación de las imágenes en formato png, gv y svg debe abrir el archivo context_map_as_is.cml y dar clic derecho sobre el mismo y seleccionar la opción “Generate Graphical Context Map” como se observa en la figura.
+>> De igual forma las imágenes generadas del código se encuentran en la siguiente ruta dentro del proyecto:src-gen/context_map_to_be_ContextMap.png
+
+![image](https://user-images.githubusercontent.com/78925077/217416596-b13f8fbf-0b5b-4458-9517-9585c12de598.png)
+
