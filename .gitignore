@@ -2,7 +2,7 @@
 *.class
 /bin
 /out
-
+/src-gen
 # Log file
 *.log
 
