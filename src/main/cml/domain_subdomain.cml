@@ -35,7 +35,7 @@ Domain GestionEnvios {
 
 UserStory CrearOrden {
     As an "Sistema de ordenes"
-    I want to "crear" an "Orden" for a "Ususario"
+    I want to "crear" an "Orden" for a "Usuario"
   so that "el Usuario podra pagar la Orden"
 }
 
