@@ -1,5 +1,5 @@
 Domain GestionEnvios {
-    domainVisionStatement = ""
+    domainVisionStatement = "Realizar logistica y entrega de bienes."
 
   Subdomain GestionEntregas supports GestionarEntregasRestaurantes, GestionarEntregasMercado, GestionarEntregasPickupPoint, GestionarEntregasDireccion {
         type = CORE_DOMAIN

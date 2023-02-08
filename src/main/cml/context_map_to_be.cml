@@ -1,0 +1,105 @@
+/* The DDD Cargo sample application modeled in CML. Note that we split the application into multiple bounded contexts. */
+ContextMap ContextMapTOBE {
+	
+
+	contains EntregasContext
+	contains OrdenesContext
+	contains RutasContext
+    contains FlotaTercerosContext
+    contains FlotaPropiaContext
+    contains InventarioBodegasPropiasContext
+	contains InventarioBodegasTercerosContext
+	contains IntegracionBodegasTercerosContext
+    contains InventarioDisponibilidadProductoContext
+    contains EmpaquetadoPropioContext
+	contains EmpaquetadoTercerosContext
+
+	/* As Evans mentions in his book (Bounded Context chapter): The voyage planning can be seen as
+	 * separated bounded context. However, it still shares code with the booking application (CargoBookingContext).
+	 * Thus, they are in a 'Shared-Kernel' relationship.
+	 */
+	// CargoBookingContext [SK]<->[SK] VoyagePlanningContext
+
+	// /* Note that the splitting of the LocationContext is not mentioned in the original DDD sample of Evans.
+	//  * However, locations and the management around them, can somehow be seen as a separated concept which is used by other
+	//  * bounded contexts. But this is just an example, since we want to demonstrate our DSL with multiple bounded contexts.
+	//  */
+	// CargoBookingContext [D]<-[U,OHS,PL] LocationContext
+
+	// VoyagePlanningContext [D]<-[U,OHS,PL] LocationContext
+
+    FlotaPropiaContext [SK]<->[SK] FlotaTercerosContext
+    FlotaPropiaContext [D]<-[U] RutasContext
+    FlotaTercerosContext [D,ACL]<-[U] RutasContext
+
+    InventarioBodegasPropiasContext [D]<-[U] OrdenesContext
+	IntegracionBodegasTercerosContext [D,ACL]<-[U] OrdenesContext
+	InventarioBodegasTercerosContext [D]<-[U] IntegracionBodegasTercerosContext
+
+    EntregasContext [D]<-[U] EmpaquetadoPropioContext 
+	EntregasContext [D]<-[U] EmpaquetadoTercerosContext 
+
+    InventarioDisponibilidadProductoContext [D]<-[U] InventarioBodegasPropiasContext
+	InventarioDisponibilidadProductoContext [D,ACL]<-[U] InventarioBodegasTercerosContext
+
+    EmpaquetadoPropioContext [D]<-[U] InventarioDisponibilidadProductoContext
+	EmpaquetadoTercerosContext [D,ACL]<-[U] InventarioDisponibilidadProductoContext
+
+    EmpaquetadoPropioContext [D]<-[U] InventarioBodegasPropiasContext
+	EmpaquetadoPropioContext [D]<-[U,OHS] InventarioBodegasTercerosContext
+	EmpaquetadoTercerosContext [D,ACL]<-[U] InventarioBodegasPropiasContext
+	EmpaquetadoTercerosContext [D,ACL]<-[U] InventarioBodegasTercerosContext
+
+    RutasContext [D]<-[U] EmpaquetadoPropioContext
+	RutasContext [D]<-[U,OHS] EmpaquetadoTercerosContext
+
+
+}
+
+BoundedContext EntregasContext {
+	domainVisionStatement = "Realizar las entregas dentro de los tiempos establecidos y competitivos."
+}
+
+BoundedContext OrdenesContext {
+	domainVisionStatement = "Administrar la creación de ordenes"
+}
+
+BoundedContext RutasContext {
+	domainVisionStatement = "Creación y modificación de las rutas de forma efectiva."
+}
+
+BoundedContext FlotaTercerosContext {
+	domainVisionStatement = "gestionar la integración con sistemas de transporte externos"
+}
+
+BoundedContext FlotaPropiaContext {
+	domainVisionStatement = "gestionar los sistemas de transporte propios"
+}
+
+BoundedContext InventarioBodegasPropiasContext {
+	domainVisionStatement = "Administrar los productos que se encuentran en las bodegas propias"
+}
+
+BoundedContext InventarioBodegasTercerosContext {
+	domainVisionStatement = "Gestionar los productos que se encuentran en las bodegas de terceros"
+}
+
+BoundedContext InventarioDisponibilidadProductoContext {
+	domainVisionStatement = "Administrar los productos que se encuentran en los Centros de Distribución de forma individual"
+}
+
+BoundedContext EmpaquetadoPropioContext {
+	domainVisionStatement = "Gestionar los procesos de agrupación de productos y empaquetado propios"
+}
+
+BoundedContext EmpaquetadoTercerosContext {
+	domainVisionStatement = "Gestionar los procesos de agrupación de productos y empaquetado terceros"
+}
+
+BoundedContext IntegracionBodegasTercerosContext {
+	domainVisionStatement = "Integracion de inventario de bodegas propias y bodegas de terceros"
+}
+
+
+
+
